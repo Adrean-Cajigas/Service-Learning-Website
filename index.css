@@ -99,7 +99,8 @@ article
     background : linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7));
     background-repeat : no-repeat;
 
-    min-height: 75vh;
+    min-height: 100vh;
+    max-height: 100vh;
     position: relative;
     overflow : hidden;
 }
@@ -107,7 +108,7 @@ article
 #header-title
 {
     color: white;
-    font-size : clamp(35px, 7vw, 55px);
+    font-size : clamp(36px, 7vw, 55px);
     font-family: 'Montserrat', sans-serif;
     text-align: center;
 
@@ -127,20 +128,20 @@ article
     text-align: center;
 
     display : flex;
+    margin : auto;
     justify-content: center;
     position : absolute;
-    top : 55%;
-    left : 14.25%;
-    right : 14.25%;
+    bottom : 40%;
+    padding-left: 3%;
+    padding-right : 3%;
+    left : 8.25%;
+    right : 8.25%;
 }
 
 
 .header-curve
 {
-    position :relative;
-    padding-top : 440px;
-
-    transform: translateY(2%);
+    position : absolute;
     bottom : 0;
     left : 0;
     width : 100%;
@@ -149,7 +150,7 @@ article
 #container-title
 {
     color: white;
-    font-size : 32px;
+    font-size : clamp(20px, 5vw, 32px);
     font-family: 'Quicksand', sans-serif;
     text-decoration: none;
     text-align: center;
@@ -158,6 +159,7 @@ article
     margin-left: 20%;
     margin-top : 1%;
     padding-bottom : 30px;
+    justify-content : center;
 
     background-image : linear-gradient(90deg, blue, rgb(19, 140, 253));
     background-size : 0% 3px;
@@ -267,7 +269,8 @@ article
 
     position : relative;
     float : left;
-    margin-right : 60%;
+    /* margin-right : 60%; */
+    width : 40%;
     padding : 40px;
     transform : translate(115px, -400px);
 
@@ -331,6 +334,12 @@ article
 
 @media all and (max-width : 988px)
 {
+    #container-title
+    {
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+
     .navigation-hamburger
     {
         z-index : 5;
@@ -389,11 +398,15 @@ article
     #header-title
     {
         top : 25%;
+        left : 7%;
+        right : 7%;
     }
 
     #header-subtitle
     {
-        top : 60%;
+        bottom : 35%;
+        left : 5.25%;
+        right : 5.25%;
     }
     
     .container
@@ -418,12 +431,16 @@ article
 
     #header-title
     {
-        top : 35%;
+        left : 4%;
+        right : 4%;
+        top : 28%;
     }
 
     #header-subtitle
     {
         top : 60%;
+        left : 2.25%;
+        right : 2.25%;
     }
 
     .container
@@ -431,9 +448,11 @@ article
         padding-left : 0px;
         padding-right : 0px;
     }
+
+    #container-title
+    {
+        margin-right: 2%;
+        margin-left: 2%;
+    }
+
 }
-
-
-/* Hey, you changed the code. Yay! */
-/* MORE NEW CODE */
-/* Bruh */
