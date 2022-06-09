@@ -230,22 +230,33 @@ article
 .description-container
 {
     position : relative;
-    display : inline-block;
-    max-width: fit-content;
+    min-height : 1100px;
+    display : flex;
     flex-flow : wrap;
+    margin-top : 100px;
+    margin-bottom : 440px;
 }
 
 .description-title
 {
     color: white;
-    font-size : 40px;
     font-family: 'Quicksand', sans-serif;
     text-decoration: none;
 
-    margin-right : 57.5%;
+    position : absolute;
+    left : 3.2%;
+    top : 7%;
+    min-width : 43%;
+
+    margin-right : 10px;
+}
+
+.description-title p
+{
+    font-size : clamp(30px, 4vh, 40px);
+    margin-bottom : 20px;
     padding-bottom : 20px;
-    position : relative;
-    transform: translate(100px, 125px);
+    text-align: center;
 
     background-image : linear-gradient(90deg, blue, rgb(19, 140, 253));
     background-size : 0% 3px;
@@ -255,7 +266,7 @@ article
     transition : 500ms ease;
 }
 
-.description-title:hover
+.description-title p:hover
 {
     background-size : 100% 6px;
 }
@@ -263,15 +274,17 @@ article
 .description-text
 {
     color: white;
-    font-size : 20px;
+    font-size : clamp(10px, 4vh, 20px);
     font-family: 'Quicksand', sans-serif;
     line-height: 50px;
 
-    position : relative;
-    float : left;
+    display : inline-block;
+
+    position : absolute;
     width : 40%;
+    top : 18%;
+    left : 5%;
     padding : 40px;
-    transform : translate(115px, -400px);
 
     border-color : whitesmoke;
     border-width : 3px;
@@ -293,12 +306,15 @@ article
 .description-image
 {
     background-repeat : no-repeat;
-    height : 45%;
+    position : absolute;
     width : 45%;
+    min-width : 20%;
+    display : inline-block;
+    right : 5%;
+    bottom : 38%;
     margin: 0 auto;
-    padding : 0;
-
-    transform : translate(110%, 80px);
+    margin-bottom : 30px;
+    flex : 0 0 auto;
 
     border : 5px solid whitesmoke;
     border-radius: 20px;
@@ -306,7 +322,10 @@ article
 
 .description-curve
 {
-    transform: translateY(-360px);
+    position : absolute;
+    bottom : 0;
+    left : 0;
+    width : 100%;
 }
 
 
@@ -331,12 +350,59 @@ article
     padding-bottom : 40px;
 }
 
+@media all and (max-width : 1500px)
+{
+    .description-title
+    {
+        left : 5%;
+        right : 5%;
+        top : 5%;
+    }
+
+}
+
+@media all and (max-width : 1240px)
+{
+
+    .description-container
+    {
+        margin-bottom : 600px;
+    }
+
+    .description-curve
+    {
+        transform: translateY(100px);
+    }
+
+    .description-title 
+    {
+        top : 0%;
+    }
+
+    .description-image
+    {
+        top : 10%;
+        right : 13%;
+        left : 13%;
+        width : 55%;
+    }
+
+    .description-text
+    {
+        margin-top : 35%;
+        width : 80%;
+        min-height : 30%;
+        margin-left : 5%;
+    }
+
+}
+
 @media all and (max-width : 988px)
 {
     #container-title
     {
-        margin-right: 5%;
-        margin-left: 5%;
+        margin-right: 2%;
+        margin-left: 2%;
     }
 
     .navigation-hamburger
@@ -416,13 +482,54 @@ article
 
     .schools-box
     {
-        transform:scale(.7);
+        transform:scale(.8);
         margin : 0px;
+    }
+
+    .schools-box:hover
+    {
+        transform:scale(.9);
+        margin : 0px;
+    }
+
+    .description-container
+    {
+        margin-top : 80px;
+    }
+
+    .description-text p
+    {
+        font-size : 18px;
+    }
+
+    .description-text
+    {
+        padding : 30px;
+    }
+
+    .description-title p
+    {
+        font-size : 35px;
+    }
+
+    .description-curve
+    {
+        transform: translateY(0px);
+    }
+
+    .description-container
+    {
+        margin-bottom : 440px;
     }
 }
 
 @media all and (max-width : 662px)
 {
+    .description-container
+    {
+        margin-bottom : 490px;
+    }
+
     .navigation-button
     {
         padding : 15px 15px;
@@ -450,8 +557,93 @@ article
 
     #container-title
     {
-        margin-right: 2%;
-        margin-left: 2%;
+        margin-right: 1%;
+        margin-left: 1%;
     }
+
+    .description-title
+    {
+        left : 0%;
+        right : 0%;
+    }
+
+    .description-image
+    {
+        top : 12%;
+        width : 70%;
+    }
+
+    .description-text
+    {
+        margin-top : 50%;
+        font-size : 16px;
+        width : 90%;
+        left : 0%;
+        padding : 20px;
+        line-height: 40px;
+    }
+
+
+
+}
+
+@media all and (max-width : 480px)
+{
+
+    .container
+    {
+        width : 100%;
+    }
+
+    .description-container
+    {
+        margin-bottom : 560px;
+    }
+
+    .description-image
+    {
+        width : 80%;
+        left : 10%
+    }
+
+    .schools-box
+    {
+        transform:scale(.7);
+        margin : 0px;
+        width : 50%;
+    }
+
+    .schools-box:hover
+    {
+        transform:scale(.8);
+        margin : 0px;
+    }
+
+    .description-title p
+    {
+        font-size : 28px;
+        left : 0%;
+        right : 0%;
+        padding : 0%;
+        margin : 0%;
+    }
+}
+
+@media all and (max-width : 351px)
+{
+    .description-image
+    {
+        top : 15%;
+        width : 85%;
+        left : 7%;
+    }
+
+    .description-text
+    {
+        line-height: 35px;
+        padding : 10px;
+        margin-top : 70%;
+    }
+
 
 }
