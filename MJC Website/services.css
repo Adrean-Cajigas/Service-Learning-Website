@@ -33,8 +33,6 @@ article
     text-align: right;
     list-style: none;
     padding-right : 20px;
-
-    background-color: #2645bf;
 }
 
 .navigation-button
@@ -62,6 +60,30 @@ article
 .navigation-text:hover
 {
     color : #0c1c8c;
+}
+
+.navigation-menu
+{
+    min-height : 50px;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.navigation-hamburger
+{
+    display : none;
+    cursor : pointer;
+}
+
+.navigation-line
+{
+    display : block;
+    width : 25px;
+    height : 3px;
+    margin : 5px auto;
+    transition : all 0.3s ease-in-out;
+    background-color : white;
 }
 
 .search-container
@@ -122,6 +144,7 @@ article
     position : absolute;
     top : 12%;
     left : 72%;
+    width : 26%;
 
     border : 5px solid white;
     border-radius: 10px;
@@ -131,6 +154,57 @@ article
     padding-left : 10px;
     padding-right : 10px;
 
+    margin-right: 50px;
+
+    background-color:#2645bf;
+    transition: 300ms ease ;
+
+}
+
+.filter-container:hover
+{
+    background-color:#0c1c8c;
+}
+
+input[type="checkbox"]
+{
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: aliceblue;
+    height : 15px;
+    width : 15px;
+    cursor : pointer;
+    border-radius : 10px;
+    outline : none;
+
+    align-items: center;
+    justify-content: space-around;
+}
+
+input[type="checkbox"]:hover
+{
+    background-color:#0096C9;
+}
+
+/*
+input[type="checkbox"]:after
+{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 800;
+    content : "\f00c";
+    color : aliceblue;
+    font-size : 14px;
+}
+*/
+
+input[type="checkbox"]:checked
+{
+    background-color:#00bfff;
+}
+
+input[type="checkbox"]:checked:after
+{
+    display : block;
 }
 
 .filter-header
@@ -169,6 +243,7 @@ article
     line-height: 50px;
 
     padding-left : 10px;
+    cursor: pointer;
 }
 
 .filter-buttons
@@ -176,6 +251,18 @@ article
     padding-top : 10px;
     padding-bottom : 20px;
     padding-left : 20px;
+}
+
+input[type="submit"]
+{
+    font-family : 'Quicksand', sans-serif;
+    font-size : 18px;
+    font-weight : 500;
+    background-color :#00bfff;
+    border-radius : 6px;
+    -webkit-border-radius : 6px;
+    border : none;
+    cursor : pointer;
 }
 
 .filter-submit
@@ -187,4 +274,63 @@ article
 {
     padding : 8px;
     transform:translateX(50px);
+}
+
+
+@media all and (max-width : 988px)
+{
+    .navigation-hamburger
+    {
+        z-index : 5;
+        display : block; 
+        position : fixed;
+        justify-content: center;
+        padding-top : 10px; 
+        padding-bottom : 10px;
+        width : 100%;
+
+        background-color: #0096C9;
+    }
+
+    .navigation-hamburger.active .navigation-line:nth-child(2)
+    {
+        opacity : 0;
+    }
+
+    .navigation-hamburger.active .navigation-line:nth-child(1)
+    {
+        transform : translateY(8px) rotate(45deg);
+    }
+
+    .navigation-hamburger.active .navigation-line:nth-child(3)
+    {
+        transform : translateY(-8px) rotate(-45deg);
+    }
+    
+    .navigation-bar
+    {
+        position : fixed;
+        top : -20%;
+        background-color: #0096C9;
+        gap : 0;
+        flex-direction : column;  
+        width : 100%;
+        text-align : center;
+        z-index : 5;
+        padding-right : 0;
+
+        transition : 0.3s ease-in-out;
+    }
+
+    .navigation-button
+    {
+        margin-bottom : 15px;
+        margin-top : 10px;
+        padding : 15px 30px;
+    }
+
+    .navigation-bar.active 
+    {
+        top : 5%;
+    }
 }

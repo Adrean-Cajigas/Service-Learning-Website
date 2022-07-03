@@ -507,6 +507,11 @@ article
         padding : 30px;
     }
 
+    .description-text:hover
+    {
+        padding : 40px;
+    }
+    
     .description-title p
     {
         font-size : 35px;
@@ -583,6 +588,12 @@ article
         line-height: 40px;
     }
 
+    .description-text:hover
+    {
+        padding : 30px;
+        background-color : #0c1c8c;
+    }
+
 
 
 }
@@ -645,5 +656,9 @@ article
         margin-top : 70%;
     }
 
-
+    .description-text:hover
+    {
+        padding : 20px;
+        background-color : #0c1c8c;
+    }
 }
